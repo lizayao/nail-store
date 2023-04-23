@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({id, name, category, description, price, stock}) => {
     return(
-        <article>
+        <article className="card card-body" style={{margin: 40, padding: 20, width: 300, height: 400}}>
             <header>
                 <h2>
                     {name}
@@ -18,7 +18,8 @@ const ItemDetail = ({id, name, category, description, price, stock}) => {
                 <p>Precio: ${price}</p>
             </section>
             <footer>
-                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada")} />
+                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada")} /><br/>
+                <button type="button" className="btn btn-primary mt-3">Agregar al carrito</button>
             </footer>
         </article>
     )
