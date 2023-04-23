@@ -18,12 +18,10 @@ const ItemDetail = ({id, name, category, description, price, stock}) => {
                 <p>Precio: ${price}</p>
             </section>
             <footer>
-                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada",)} />
+                <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log("Cantidad agregada")} />
             </footer>
         </article>
     )
 }
-
-
 
 export default ItemDetail;
