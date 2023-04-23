@@ -30,3 +30,5 @@ const Carousel = () => {
 }
 
 export default Carousel;
+
+/* Carousel no hace fade */

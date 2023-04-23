@@ -7,6 +7,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
+
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,7 @@ function App() {
         <NavBar />
         <Carousel />
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting={"Bienvenidas"}/>} />
+          <Route path='/' element={<ItemListContainer greeting={"Bienvenidas manicuras!"}/>} />
           <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='*' element={<h1>404 NOT FOUND</h1>} />

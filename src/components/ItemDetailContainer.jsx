@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
             })
     }, [itemId])
     return(
-        <div>
+        <div className= "d-flex flex-row">
             <ItemDetail {...product} />
         </div>
     )
