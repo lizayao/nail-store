@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav className="navbar bg-body-tertiary px-5">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    <img src={logo} alt="Nail Store" width={180} />
+                    <img src={logo} alt="Nail Store" width={150} />
                 </Link>
                 <NavLink to={`/category/esmaltes`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Esmaltes y polimeros</NavLink>
                 <NavLink to={`/category/decoracion`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Decoracion</NavLink>
