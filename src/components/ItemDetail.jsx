@@ -2,7 +2,7 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({id, name, category, description, price, stock}) => {
+const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     return(
         <article className="card card-body d-flex justify-content-between align-items-center" style={{margin: 40, padding: 20, width: 300, height: 400}}>
             <header>
@@ -11,7 +11,7 @@ const ItemDetail = ({id, name, category, description, price, stock}) => {
                 </h2>
             </header>
             <picture>
-                <img alt={name} />
+                <img src={img} alt={name} />
             </picture>
             <section>
                 <p>Categoria: {category}</p>

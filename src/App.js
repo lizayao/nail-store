@@ -6,6 +6,7 @@ import Carousel from './components/Carousel';
 import ItemListContainer from "./components/ItemListContainer";
 import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='*' element={<h1>404 NOT FOUND</h1>} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
