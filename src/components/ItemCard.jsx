@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ id, name, img, price, stock }) => {
     return (
-        <div className="card card-body d-flex justify-content-between align-items-center" style={{margin: 40, padding: 20, width: 300, height: 400}}>
-            <div className="" width=""><img src={img} className="card-img-top img-fluid" alt={name} /></div>
+        <div className="card card-body d-flex justify-content-between align-items-center" >
+            <img src={img} alt={name} height={200} />
             <h5 className="card-title">{name}</h5>
             <p>Precio: ${price}</p>
             <p>Stock disponible: {stock}</p>

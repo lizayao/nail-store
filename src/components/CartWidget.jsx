@@ -2,6 +2,7 @@ import React from "react";
 import cart from "../assets/icons/cart.svg"
 
 const CartWidget = () => {
+    
     return(
         <div>
             <img src={cart} alt="cart-widget" height={20}></img>
