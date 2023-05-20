@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+
     const [quantityAdded, setQuantityAdded] = useState(0)
+
+    const {addItem} = useContext(CartContext)
+
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
+        const item = {
+            id, name, price
+        }
+        addItem(item, quantity)
     }
     return (
-        <article className="card card-body d-flex justify-content-between align-items-center" style={{ margin: 40, padding: 20, width: 300, height: 400 }}>
+        <article className="card card-body d-flex justify-content-between align-items-center" /* style={{ margin: 40, padding: 20, width: 300, height: 400 }} */>
             <header>
                 <h2>
                     {name}
@@ -24,12 +33,12 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             </section>
             <footer>
                 {quantityAdded > 0 ? (
-                    <button><Link to='/cart' className="Option">Terminar compra</Link></button>
+                    <button><Link to='/cart'>Terminar compra</Link></button>
                 ) : (
                     <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />      
                 )}
             </footer>
-            <p><Link to={`/`}>Volver</Link></p>
+            <button type="button" class="btn btn-outline-primary" style={{color: 'white'}}><Link to={`/`}>Volver</Link></button>
         </article>
     )
 }

@@ -14,22 +14,3 @@ const Item = ({ id, name, img, price, stock }) => {
 }
 
 export default Item;
-
-
-{/* <article>
-<header>
-    <h2>
-        {name}
-    </h2>
-</header>
-<picture>
-    <img src={img} alt={name} />
-</picture>
-<section>
-    <p>Precio: ${price}</p>
-    <p>Stock disponible: {stock}</p>
-</section>
-<footer>
-    <Link to={`/item/${id}`}>Ver detalle</Link>
-</footer>
-</article> */}
