@@ -1,31 +1,45 @@
-import './App.css';
-import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from "./components/NavBar";
-import Carousel from './components/Carousel';
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from './components/ItemDetailContainer';
-import { CartProvider } from './context/CartContext';
-import Cart from './components/Cart';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import ProductsView from "./views/ProductsView";
+import DetailProductView from "./views/DetailProductView";
+import NavBarComponent from "./components/NavBarComponent";
+import AboutView from "./views/AboutView";
+import { routes } from "./routes";
+import ItemFormView from "./views/ItemFormView";
+import GeneralContext from "./context/GeneralContext";
+import { useState } from "react";
+import DetailCarView from "./views/DetailCartView";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart,item]);
+  };
+
+  const removeToCart = (item) => {
+    const newArray = cart.filter(_item => _item.id !== item.id);
+    setCart(newArray)
+  };
+
+  const cleanCart = () => {
+    setCart([]);
+  };
+
   return (
-    <div className="App">
+    <GeneralContext.Provider value={{ addToCart,cart,removeToCart,cleanCart }}>
       <BrowserRouter>
-        <CartProvider>
-          <NavBar />
-          <Carousel />
-          <Routes>
-            <Route path='/' element={<ItemListContainer greeting={"Bienvenidas manicuras!"} />} />
-            <Route path='/category/:categoryId' element={<ItemListContainer />} />
-            <Route path='/item/:itemId' element={<ItemDetailContainer />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='*' element={<h1>404 NOT FOUND</h1>} />
-          </Routes>
-        </CartProvider>
+        <NavBarComponent />
+        <Routes>
+          <Route path={routes.root} element={<ProductsView />}></Route>
+          <Route path="/products/detail/:idProduct" element={<DetailProductView />}></Route>
+          <Route path={routes.aboutView} element={<AboutView />} />
+          <Route path="/eventos" element={<ItemFormView />}></Route>
+          <Route path="/products/cart" element={<DetailCarView />}></Route>
+          <Route path="/category/:category" element={<ProductsView />}></Route>
+        </Routes>
       </BrowserRouter>
-    </div>
+    </GeneralContext.Provider>
   );
 }
 
