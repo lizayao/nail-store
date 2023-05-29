@@ -8,7 +8,7 @@ import { routes } from "./routes";
 import ItemFormView from "./views/ItemFormView";
 import GeneralContext from "./context/GeneralContext";
 import { useState } from "react";
-import DetailCarView from "./views/DetailCartView";
+import DetailCartView from "./views/DetailCartView";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -35,7 +35,7 @@ function App() {
           <Route path="/products/detail/:idProduct" element={<DetailProductView />}></Route>
           <Route path={routes.aboutView} element={<AboutView />} />
           <Route path="/eventos" element={<ItemFormView />}></Route>
-          <Route path="/products/cart" element={<DetailCarView />}></Route>
+          <Route path="/products/cart" element={<DetailCartView />}></Route>
           <Route path="/category/:category" element={<ProductsView />}></Route>
         </Routes>
       </BrowserRouter>
