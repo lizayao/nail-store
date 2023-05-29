@@ -23,7 +23,7 @@ const BuyComponent = () => {
     const db = getFirestore();
     const orderCollection = collection(db, collectionOrders);
     addDoc(orderCollection, _order).then(({ id }) => {
-      alert(`Orden de compra creada folio: ${id}`);
+      alert(`Código de orden de compra: ${id}`);
       cleanCart();
       navigate("/");
     });
@@ -32,16 +32,16 @@ const BuyComponent = () => {
   return (
     <Fragment>
       <div className="row">
-        <div className="col-10"></div>
+        <div className="col-8"></div>
         <div className="col-2">
           <table>
             <tbody>
               <tr>
-                <td colSpan={2}>Resumen de la compra</td>
+                <td colSpan={2} className="h4">Resumen de la compra</td>
               </tr>
               <tr>
-                <td className="h5">Productos: </td>
-                <td className="h5"> {" "+cart.length+" "} PZAS</td>
+                <td className="h6">Cantidad: </td>
+                <td className="h6"> {" "+cart.length+" "} </td>
               </tr>
               <tr>
                 <td className="h5">Total: </td>

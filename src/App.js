@@ -35,7 +35,7 @@ function App() {
           <Route path="/products/detail/:idProduct" element={<DetailProductView />}></Route>
           <Route path={routes.aboutView} element={<AboutView />} />
           <Route path="/eventos" element={<ItemFormView />}></Route>
-          <Route path="/products/cart" element={<DetailCartView />}></Route>
+          <Route path="/products/car" element={<DetailCartView />}></Route>
           <Route path="/category/:category" element={<ProductsView />}></Route>
         </Routes>
       </BrowserRouter>
