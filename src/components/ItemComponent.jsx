@@ -17,8 +17,8 @@ const ItemComponent = (props) => {
 
   return (
     <div className="card shadow-sm d-flex align-items-center">
-      <h4 className="justify-content-center">{name}</h4>
       <img className="card-img-top"  src={image} alt="" />
+      <h5 className="justify-content-center">{name}</h5>
       <div className="card-body">
         <p className="text-muted">{showShortValue(description)}</p>
         <p className="h6">Precio: $ {price}</p>

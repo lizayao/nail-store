@@ -6,7 +6,7 @@ const ItemButtonsComponent = ({showDelete,showInfo,removeThisItem,idProduct}) =>
     <Fragment>
       {showDelete ? (
         <button className="btn btn-danger btn-sm" onClick={removeThisItem}>
-          x
+          Eliminar producto
         </button>
       ) : (
         ""

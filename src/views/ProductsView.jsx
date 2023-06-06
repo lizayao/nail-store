@@ -4,12 +4,13 @@ import useFirestore from "../utils/useFirestore";
 import { useParams } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import CarouselComponent from "../components/CarouselComponent";
-
+const URL_CATEGORY = "category"
 
 const nameCollection = "items";
 
 const ProductsView = (props) => {
   const { category } = useParams();
+ /*  const final_url = category ? `${BASE_URL}/${URL_CATEGORY}/${category}` : BASE_URL; */
 
   const options = useMemo(() => {
     const _optionwithFilters =  { nameCollection, filters: { where: ["category", "==", category] } };
@@ -33,7 +34,6 @@ const ProductsView = (props) => {
             data.map((item, index) => {
               return (
                 <div key={index} className="col">
-              
                   <ItemComponent showInfo data={item}  />
                 </div>
               );
